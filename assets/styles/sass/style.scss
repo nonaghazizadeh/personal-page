@@ -1,0 +1,133 @@
+$primary-color: #2b2c30;
+$white: #fff;
+$background-color: #333439;
+$pink: #d81356;
+$text-color:#c5c5c5;
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+    background: $primary-color;
+    color: $white;
+    font-family: "IRANSans";
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .bg-dark {
+    background: $background-color !important;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+    color: $white;
+    line-height: 1.3;
+  }
+  
+  a {
+    color: $pink;
+    text-decoration: none !important;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    &:hover{
+        color: $pink;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        -ms-transition: all 0.4s ease-in-out 0s;
+        -o-transition: all 0.4s ease-in-out 0s;
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+        text-decoration: none;
+    }
+    &:focus{
+        color: $pink;
+        text-decoration: none;
+    }
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: $text-color;
+    line-height: 24px;
+    font-family: "IRANSans";
+  }
+  
+  .form-control{
+      &:focus{
+        box-shadow: none;
+        outline: 0 none;
+        border-bottom: 1px solid $pink;
+      }
+    
+  }
+  
+  .btn:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
+  
+  button:focus {
+    outline: 0 none;
+    box-shadow: none;
+  }
+  
+  .button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 8px 30px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    border: 2px solid #d81356;
+    border-radius: 30px;
+    background: #d81356;
+    transition: all 500ms ease;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 25px;
+  }
+  
+  .button:hover {
+    color: #fff;
+    background: transparent;
+    border: 2px solid #d81356;
+  }

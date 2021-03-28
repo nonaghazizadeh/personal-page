@@ -1,0 +1,126 @@
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #2b2c30;
+  color: #fff;
+  font-family: "IRANSans";
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bg-dark {
+  background: #333439 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+  color: #fff;
+  line-height: 1.3;
+}
+
+a {
+  color: #d81356;
+  text-decoration: none !important;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+a:hover {
+  color: #d81356;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  text-decoration: none;
+}
+
+a:focus {
+  color: #d81356;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #c5c5c5;
+  line-height: 24px;
+  font-family: "IRANSans";
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 0 none;
+  border-bottom: 1px solid #d81356;
+}
+
+.btn:focus {
+  outline: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+button:focus {
+  outline: 0 none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.button:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 30px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  border: 2px solid #d81356;
+  border-radius: 30px;
+  background: #d81356;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  cursor: pointer;
+  color: #fff;
+  margin-top: 25px;
+}
+
+.button:hover {
+  color: #fff;
+  background: transparent;
+  border: 2px solid #d81356;
+}
+/*# sourceMappingURL=style.css.map */
