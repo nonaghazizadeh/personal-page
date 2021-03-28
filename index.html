@@ -22,25 +22,37 @@
 </head>
 
 <body>
-    <!-- <nav class="navbar">
+    <nav dir="ltr" class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
         <div class="container">
-            <div class="toggle">
-                <i class="fa fa-bars menu" aria-hidden="true"></i>
-            </div>
-            <ul class="navbar-list">
-                <li class="navbar-item"><a href="#home">خانه</a></li>
-                <li class="navbar-item"><a href="#about">درباره</a></li>
-                <li class="navbar-item"><a href="#service">سرویس</a></li>
-                <li class="navbar-item"><a href="#project">پروژه</a></li>
-                <li class="navbar-item"><a href="#review">مرور</a></li>
-                <li class="navbar-item"><a href="#blog">بلاگ</a></li>
-                <li class="navbar-item"><a href="#contact">ارتباط</a></li>
-            </ul>
-            <div class="navbar-brand-container">
-                <a class="navbar-brand" href="index.html"><span class="color-text">آ</span>وانا</a>
-            </div>
+            <a class="navbar-brand js-scroll" href="index.html"><span class="color-text">آ</span>وانا</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+                aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div dir="rtl" class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link js-scroll active" href="#home">خانه</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll" href="#about">درباره</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll" href="#service">سرویس</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll" href="#project">پروژه</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll" href="#review">مرور</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll" href="#blog">بلاگ</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll" href="#contact">ارتباط</a>
+                    </li>
+                </ul>
+            </div>            
+            
         </div>
-    </nav> -->
+    </nav>
 
     <header id="home" class="home-area hero-equal-height section-padding">
         <div class="container">
@@ -246,16 +258,15 @@
                 <div class="project-buttons">
                     <div class="project-list">
                         <ul class="nav" id="project-flters">
-                            <li class="filter filter-active" data-filter=".all">همه</li>
-                            <li class="filter" data-filter=".branding">برندها</li>
-                            <li class="filter" data-filter=".webdesign">طراحی وب</li>
-                            <li class="filter" data-filter=".photography">عکاسی</li>
+                            <li class="filter filter-active" id="all">همه</li>
+                            <li class="filter" id="branding">برندها</li>
+                            <li class="filter" id="web">طراحی وب</li>
+                            <li class="filter" id="photography">عکاسی</li>
                         </ul>
                     </div>
                 </div>
-                <div class="project-container">
-
-                    <div class="project-box project-one project-grid-item all branding webdesign">
+                <div class="project-container-all">
+                    <div class="project-box project-grid-item all branding webdesign project-one-all">
                         <a class="popup-img project-item " href="assets/images/project_images/project-1.jpg">
                             <img src="assets/images/project_images/project-1.jpg" alt="img">
                             <div class="project-img-overlay">
@@ -267,7 +278,7 @@
                         </a>
                     </div>
 
-                    <div class="project-box project-two project-grid-item all photography">
+                    <div class="project-box project-grid-item all photography project-two-all">
                         <a class="popup-img project-item" href="assets/images/project_images/project-2.jpg">
                             <img src="assets/images/project_images/project-2.jpg" alt="img">
                             <div class="project-img-overlay">
@@ -279,7 +290,7 @@
                         </a>
                     </div>
 
-                    <div class="project-box project-three project-grid-item all branding webdesign">
+                    <div class="project-box project-grid-item all branding webdesign project-three-all">
                         <a class="popup-img project-item " href="assets/images/project_images/project-3.jpg">
                             <img src="assets/images/project_images/project-3.jpg" alt="img">
                             <div class="project-img-overlay">
@@ -291,7 +302,7 @@
                         </a>
                     </div>
 
-                    <div class="project-box project-four project-grid-item all branding webdesig photographyn">
+                    <div class="project-box project-grid-item all branding webdesig project-four-all">
                         <a class="popup-img project-item" href="assets/images/project_images/project-4.jpg">
                             <img src="assets/images/project_images/project-4.jpg" alt="img">
                             <div class="project-img-overlay">
@@ -303,7 +314,7 @@
                         </a>
                     </div>
 
-                    <div class="project-box project-five project-grid-item all webdesign photography">
+                    <div class="project-box project-grid-item all webdesign photography project-five-all">
                         <a class="popup-img project-item" href="assets/images/project_images/project-5.jpg">
                             <img src="assets/images/project_images/project-5.jpg" alt="img">
                             <div class="project-img-overlay">
@@ -315,7 +326,7 @@
                         </a>
                     </div>
 
-                    <div class="project-box project-six project-grid-item all webdesign photography">
+                    <div class="project-box project-grid-item all webdesign photography project-six-all">
                         <a class="popup-img project-item" href="assets/images/project_images/project-6.jpg">
                             <img src="assets/images/project_images/project-6.jpg" alt="img">
                             <div class="project-img-overlay">
@@ -341,13 +352,13 @@
             <div class="row">
                 <div class="title-row">
                     <div class="section-title">
-                        <h2>Testimonials</h2>
+                        <h2>مرور</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="review-box">
-                    <div id="testimonial-slide" class="owl-carousel owl-theme owl-loaded owl-drag">
+                    <div id="testimonial-slide">
                         <div class="single-testimonial">
                             <div class="testi-content-inner">
                                 <div class="avatar">
@@ -363,8 +374,62 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="single-testimonial">
+                            <div class="testi-content-inner">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-images/avatar-2.jpg" alt="testimonial">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
+                                    </p>
+                                </div>
+                                <div class="testimonial-bio">
+                                    <div class="bio-info">
+                                        <h3 class="name">استیو جابز</h3><span>شرکت اپل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial">
+                            <div class="testi-content-inner">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-images/avatar-3.jpg" alt="testimonial">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
+                                    </p>
+                                </div>
+                                <div class="testimonial-bio">
+                                    <div class="bio-info">
+                                        <h3 class="name">استیو جابز</h3><span>شرکت اپل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial">
+                            <div class="testi-content-inner">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-images/avatar-4.jpg" alt="testimonial">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
+                                    </p>
+                                </div>
+                                <div class="testimonial-bio">
+                                    <div class="bio-info">
+                                        <h3 class="name">استیو جابز</h3><span>شرکت اپل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="dot-wrapper">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>     
             </div>
         </div>
     </section>

@@ -1,4 +1,55 @@
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar-expand-md .navbar-collapse {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+
+  .navbar-expand-md .navbar-nav {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .navbar-expand-md {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .navbar-expand-md > .container {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .navbar-expand-md .navbar-nav {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  /* .navbar .container{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+} */
+
+  .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-b.navbar-trans .nav-item,
+  .navbar-b.navbar-reduce .nav-item {
+    padding-left: 0;
+  }
+
   .home-area {
     background-attachment: unset;
   }
@@ -60,9 +111,21 @@
     padding-left: 15px;
   }
 
-  .project-container {
+  .project-container-all {
     position: relative;
     height: 1177.29px;
+  }
+  .project-container-brand {
+    position: relative;
+    height: 872.292px;
+  } 
+  .project-container-web {
+    position: relative;
+    height: 741.146px;
+  } 
+  .project-container-photography {
+    position: relative;
+    height: 610px;
   }
   .project-buttons {
     flex: 0 0 100%;
@@ -78,36 +141,88 @@
     padding-left: 15px;
   }
 
-  .project-one {
+  .project-one-all {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  .project-one-brand {
     position: absolute;
     left: 0px;
     top: 0px;
   }
 
-  .project-two {
+  .project-one-web {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  .project-two-all {
     position: absolute;
     left: 360px;
     top: 0px;
   }
-  .project-three {
+  .project-two-photography {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .project-three-brand {
+    position: absolute;
+    left: 360px;
+    top: 0px;
+  }
+  .project-three-web {
+    position: absolute;
+    left: 360px;
+    top: 0px;
+  }
+  .project-three-all {
     position: absolute;
     left: 360px;
     top: 305px;
   }
-  .project-four {
+  .project-four-brand {
     position: absolute;
     left: 0px;
     top: 436.146px;
   }
-  .project-five {
+  .project-four-all {
+    position: absolute;
+    left: 0px;
+    top: 436.146px;
+  }
+  .project-five-photography {
+    position: absolute;
+    left: 360px;
+    top: 0px;
+  }
+  .project-five-all {
     position: absolute;
     left: 360px;
     top: 741.146px;
   }
-  .project-six {
+  .project-five-web {
+    position: absolute;
+    left: 0px;
+    top: 436.146px;
+  }
+
+  .project-six-web {
+    position: absolute;
+    left: 360px;
+    top: 436.146px;
+  }
+  .project-six-all {
     position: absolute;
     left: 0px;
     top: 872.292px;
+  }
+  .project-six-photography {
+    position: absolute;
+    left: 0px;
+    top: 305px;
   }
 
   .blog-box {
