@@ -4,6 +4,8 @@ var nav = $('nav');
 	$('.navbar-toggler').on('click', function() {
 		if(!$('#mainNav').hasClass('navbar-reduce')) {
 			$('#mainNav').addClass('navbar-reduce');
+      $('#mainNav').removeClass('navbar-trans');
+
 		}
   });
   
@@ -12,11 +14,11 @@ var nav = $('nav');
 		var pixels = 50;
 		var top = 1200;
 		if($(window).scrollTop() > pixels) {
-			$('.navbar-expand-md').addClass('navbar-reduce');
-			$('.navbar-expand-md').removeClass('navbar-trans');
+			$('.navbar').addClass('navbar-reduce');
+			$('.navbar').removeClass('navbar-trans');
 		} else {
-			$('.navbar-expand-md').addClass('navbar-trans');
-			$('.navbar-expand-md').removeClass('navbar-reduce');
+			$('.navbar').addClass('navbar-trans');
+			$('.navbar').removeClass('navbar-reduce');
 		}
 		if($(window).scrollTop() > top) {
 			$('.scrolltop-mf').fadeIn(1000, "easeInOutExpo");
@@ -109,7 +111,7 @@ $('.navbar-toggler').on("click", function () {
     }
   });
 
-  
+
 $(document).ready(function () {
   $('.odometer').appear(function () {
     var odo = $(".odometer");

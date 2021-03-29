@@ -1,0 +1,97 @@
+.testimonial-area {
+    background: url(../../images/other-images/review-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.single-testimonial {
+    position: relative;
+    background: transparent;
+    opacity: 0;
+    padding: 20px 30px;
+    border-radius: 3px;
+    z-index: 1;
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    display: none;
+        & .testimonial-bio {
+            text-align: center;
+        }
+        & .avatar{
+            img{
+                border-radius: 50%;
+                border: 5px solid #ffffff;
+                width: 110px;
+                margin: 0 auto;
+                border-left-color: #d81356;
+                border-bottom-color: #d81356
+            }
+        }
+        & .testimonial-bio{
+            & .bio-info{
+                margin-left: 10px;
+                & .name{
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+
+        }
+        & .testimonial-content{
+            margin-bottom: 20px;
+            text-align: center;
+            h3{
+                font-size: 18px;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+            p{
+                font-size: 16px;
+                color: #ccc;
+                font-style: italic;
+                line-height: 1.8;
+            }
+        }
+  }
+  
+  .isShowing{
+    opacity: 1;
+  }
+  
+  .testi-content-inner .avatar {
+    margin: 0 auto;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #d6d6d6;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .review-box,
+  .dot-wrapper {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .onThis{
+    background-color: #869791;
+  }
+  .dot{
+      &:hover {
+        background-color: #869791;
+      }
+  } 

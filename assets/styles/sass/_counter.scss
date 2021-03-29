@@ -1,0 +1,33 @@
+.counter-area {
+    background: url(../../images/other-images/contact-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .single-counter-box {
+    text-align: center;
+  }
+  
+  .single-counter {
+    padding: 15px 0px;
+    position: relative;
+    z-index: 1;
+    i {
+        color: #ff9800;
+        font-size: 50px;
+      }
+      h3 {
+        margin-top: 15px;
+        color: #ffffff;
+        font-size: 38px;
+        font-weight: 700;
+        display: block !important;
+      }
+      p {
+        line-height: 1.5;
+        color: #fff;
+        margin-top: 8px;
+        font-size: 15px;
+        font-weight: 400;
+      }
+  }
