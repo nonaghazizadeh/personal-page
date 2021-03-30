@@ -244,6 +244,206 @@
     }
   }
 
+  .project-container-all {
+    @include breakpoint(desktop){
+        position: relative;
+        height: 658.584px;
+    }
+    @include breakpoint(tablet){
+        position: relative;
+        height: 1177.29px;
+    }
+    
+  }
+  .project-container-brand {
+    @include breakpoint(desktop){
+        position: relative;
+        height: 386.917px;
+    }
+    @include breakpoint(tablet){
+        position: relative;
+        height: 872.292px;
+    }
+    
+  } 
+  .project-container-web {
+    @include breakpoint(desktop){
+        position: relative;
+        height: 543.334px;
+    }
+    @include breakpoint(tablet){
+        position: relative;
+        height: 741.146px;
+    }
+    
+  } 
+  .project-container-photography {
+    @include breakpoint(desktop){
+        position: relative;
+        height: 271.667px;
+    }
+    @include breakpoint(tablet){
+        position: relative;
+        height: 610px;
+    }
+  }
+  .project-box {
+    @include breakpoint(desktop){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    @include breakpoint(tablet){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+  }
+
+  .project-one-all,
+  .project-one-web,
+  .project-one-brand,
+  .project-two-photography {
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+  }
+  
+  .project-two-all{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 320px;
+        top: 0px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 360px;
+        top: 0px;
+    }
+  }
+
+  .project-three-all{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 640px;
+        top: 0px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 360px;
+        top: 305px;
+    }
+  }
+
+  .project-three-brand,
+  .project-three-web,
+  .project-five-photography{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 320px;
+        top: 0px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 360px;
+        top: 0px;
+    }
+  }
+
+  .project-four-all{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 320px;
+        top: 271.667px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 0px;
+        top: 436.146px;
+    }
+  }
+
+  .project-four-brand,
+  .project-five-web{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 640px;
+        top: 0px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 0px;
+        top: 436.146px;
+    }
+  }
+
+  .project-five-all{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 0px;
+        top: 386.917px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 360px;
+        top: 741.146px;
+    }
+  }
+//   .project-five-web{
+//     @include breakpoint(desktop){
+//         position: absolute;
+//         left: 0px;
+//         top: 386.917px;
+//     }
+//     @include breakpoint(tablet){
+//         position: absolute;
+//         left: 360px;
+//         top: 741.146px;
+//     }
+//   }
+
+  .project-six-all{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 640px;
+        top: 386.917px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 0px;
+        top: 872.292px;
+    }
+  }
+
+  .project-six-web{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 640px;
+        top: 271.667px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 360px;
+        top: 436.146px
+    }
+  }
+  .project-six-photography{
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 640px;
+        top: 0px;
+    }
+    @include breakpoint(tablet){
+        position: absolute;
+        left: 0px;
+        top: 305px;
+    }
+  }
   .review-box {
     @include breakpoint(tablet){
         flex: 0 0 100%;
@@ -352,5 +552,7 @@
     padding-right: 15px;
     padding-left: 15px;
   }
+
+
 
   

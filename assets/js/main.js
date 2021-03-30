@@ -90,17 +90,6 @@ $('.navbar-toggler').on("click", function () {
       });
     }
   
-    function showLetter($letter, $word, $bool, $duration) {
-      $letter.addClass('in').removeClass('out');
-      
-      if(!$letter.is(':last-child')) { 
-        setTimeout(function(){ showLetter($letter.next(), $word, $bool, $duration); }, $duration); 
-      } else { 
-        if($word.parents('.cd-headline').hasClass('type')) { setTimeout(function(){ $word.parents('.cd-words-wrapper').addClass('waiting'); }, 200);}
-        if(!$bool) { setTimeout(function(){ hideWord($word) }, animationDelay) }
-      }
-    }
-  
     function takeNext($word) {
       return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
     }
@@ -133,7 +122,6 @@ function showSlides() {
     slides[i].style.display = "none";  
     if(slides[i].classList.contains('isShowing')){
       slides[i].classList.remove('isShowing')
-      // $(slides[i]).animate({ width: 'hide' }); 
     }
   }
   slideIndex++;

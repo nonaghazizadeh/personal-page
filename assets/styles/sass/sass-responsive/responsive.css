@@ -373,6 +373,252 @@
   }
 }
 
+@media (min-width: 991px) {
+  .project-container-all {
+    position: relative;
+    height: 658.584px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-container-all {
+    position: relative;
+    height: 1177.29px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-container-brand {
+    position: relative;
+    height: 386.917px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-container-brand {
+    position: relative;
+    height: 872.292px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-container-web {
+    position: relative;
+    height: 543.334px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-container-web {
+    position: relative;
+    height: 741.146px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-container-photography {
+    position: relative;
+    height: 271.667px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-container-photography {
+    position: relative;
+    height: 610px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-one-all,
+  .project-one-web,
+  .project-one-brand,
+  .project-two-photography {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-one-all,
+  .project-one-web,
+  .project-one-brand,
+  .project-two-photography {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-two-all {
+    position: absolute;
+    left: 320px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-two-all {
+    position: absolute;
+    left: 360px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-three-all {
+    position: absolute;
+    left: 640px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-three-all {
+    position: absolute;
+    left: 360px;
+    top: 305px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-three-brand,
+  .project-three-web,
+  .project-five-photography {
+    position: absolute;
+    left: 320px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-three-brand,
+  .project-three-web,
+  .project-five-photography {
+    position: absolute;
+    left: 360px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-four-all {
+    position: absolute;
+    left: 320px;
+    top: 271.667px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-four-all {
+    position: absolute;
+    left: 0px;
+    top: 436.146px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-four-brand,
+  .project-five-web {
+    position: absolute;
+    left: 640px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-four-brand,
+  .project-five-web {
+    position: absolute;
+    left: 0px;
+    top: 436.146px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-five-all {
+    position: absolute;
+    left: 0px;
+    top: 386.917px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-five-all {
+    position: absolute;
+    left: 360px;
+    top: 741.146px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-six-all {
+    position: absolute;
+    left: 640px;
+    top: 386.917px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-six-all {
+    position: absolute;
+    left: 0px;
+    top: 872.292px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-six-web {
+    position: absolute;
+    left: 640px;
+    top: 271.667px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-six-web {
+    position: absolute;
+    left: 360px;
+    top: 436.146px;
+  }
+}
+
+@media (min-width: 991px) {
+  .project-six-photography {
+    position: absolute;
+    left: 640px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-six-photography {
+    position: absolute;
+    left: 0px;
+    top: 305px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .review-box {
     -webkit-box-flex: 0;
