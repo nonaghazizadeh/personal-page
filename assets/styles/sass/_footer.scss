@@ -1,6 +1,9 @@
+$footer-bg-color: #333439;
+$pink: #d81356;
+$white : #fff;
 .footer-area {
     padding: 50px 0;
-    background: #333439 !important;
+    background: $footer-bg-color !important;
   
   }
   .footer-social-media {
@@ -34,9 +37,9 @@
             transition: all 0.4s;
           }
           &:hover {
-            color: #fff;
+            color: $white;
             &:after {
-                background: #d81356;
+                background: $pink;
                 -webkit-transform: rotate(45deg) scale(0.98);
                 -moz-transform: rotate(45deg) scale(0.98);
                 -ms-transform: rotate(45deg) scale(0.98);
@@ -50,9 +53,9 @@
   .copyright-area{
     text-align: center !important;
     p {
-        color: #fff;
+        color: $white;
         a {
-            color: #d81356;
+            color: $pink;
             font-weight: 500;
           }
       }

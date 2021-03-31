@@ -1,5 +1,11 @@
+$white: #fff;
+$pink :#d81356;
+$single-service-bg-color: #1e1f25;
+$service-bg-color:#333439;
+$border-color: #2a2b30;
+$icon-bg-color: rgba(200, 200, 200, 0.07);
 .service-area{
-    background: #333439 !important;
+    background: $service-bg-color !important;
   }
 
   .services-item {
@@ -12,7 +18,7 @@
   .single-services-box {
     position: relative;
     padding: 45px 25px;
-    background-color: #1e1f25;
+    background-color: $single-service-bg-color;
     text-align: center;
     border-radius: 3px;
     &:before {
@@ -22,7 +28,7 @@
         right: 0px;
         bottom: 0;
         min-width: 100%;
-        border-top: 2px solid #d81356;
+        border-top: 2px solid $pink;
         transform: scaleX(0);
         -webkit-transition: all 500ms ease;
         -moz-transition: all 500ms ease;
@@ -41,7 +47,7 @@
   .services-icon {
     margin-bottom: 25px;
     i {
-        color: #fff;
+        color: $white;
         font-size: 40px;
         width: 80px;
         height: 80px;
@@ -60,13 +66,13 @@
             left: 0;
             position: absolute;
             border-radius: 50%;
-            background: rgba(200, 200, 200, 0.07);
+            background: $icon-bg-color;
             z-index: -1;
             -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
             -webkit-transition: all 0.4s;
             transition: all 0.4s;
-            border: 2px solid #2a2b30;
+            border: 2px solid $border-color;
             -webkit-transition: all 0.5s;
             transition: all 0.5s;
             -webkit-transform: scale(1.1);
@@ -80,8 +86,8 @@
         .services-icon{
             i{
                 &:after {
-                    background: #d81356;
-                    border: 2px solid #d81356;
+                    background: $pink;
+                    border: 2px solid $pink;
                     -webkit-transform: scale(0.98);
                     -moz-transform: scale(0.98);
                     -ms-transform: scale(0.98);
@@ -97,7 +103,7 @@
     h3 {
         font-size: 17px;
         margin-bottom: 10px;
-        color: #ffffff;
+        color: $white;
         font-weight: 500;
       }
   }

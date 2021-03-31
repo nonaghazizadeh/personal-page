@@ -1,3 +1,5 @@
+$white: #fff;
+$orange-text-color: #ff9800;
 .counter-area {
     background: url(../../images/other-images/contact-bg.png);
     background-repeat: no-repeat;
@@ -13,19 +15,19 @@
     position: relative;
     z-index: 1;
     i {
-        color: #ff9800;
+        color: $orange-text-color;
         font-size: 50px;
       }
       h3 {
         margin-top: 15px;
-        color: #ffffff;
+        color: $white;
         font-size: 38px;
         font-weight: 700;
         display: block !important;
       }
       p {
         line-height: 1.5;
-        color: #fff;
+        color: $white;
         margin-top: 8px;
         font-size: 15px;
         font-weight: 400;

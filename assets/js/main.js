@@ -18,22 +18,7 @@ window.addEventListener('scroll' , function(){
     document.querySelector(".navbar").classList.add("navbar-trans");
     document.querySelector(".navbar").classList.remove("navbar-reduce");
   }
-})
-
-  
-  $('a.js-scroll[href*="#"]:not([href="#"])').on("click", function() {
-		if(location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-			if(target.length) {
-				$('html, body').animate({
-					scrollTop: (target.offset().top - navHeight + 30)
-				}, 1000, "easeInOutExpo");
-				return false;
-			}
-		}
-  });
-
+});
 
 document.querySelector(".navbar-toggler").addEventListener("click", function(){
   var togglerNav = document.querySelector("#navbarDefault");
@@ -43,7 +28,7 @@ document.querySelector(".navbar-toggler").addEventListener("click", function(){
   else if(! togglerNav.classList.contains("collapse")){
     togglerNav.classList.add("collapse");
   }
-})
+});
 
   items = document.querySelectorAll('.js-scroll');
   for (var i = 0 ; i <items.length ; i++){
@@ -52,134 +37,107 @@ document.querySelector(".navbar-toggler").addEventListener("click", function(){
     })
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var animationDelay = 2500,
-      revealDuration = 600,
-      revealAnimationDelay = 1500;
-    initHeadline();
-    
-    function initHeadline() {
-      
-      animateHeadline($('.cd-headline'));
+  var TxtRotate = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
+  
+  TxtRotate.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+  
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
   
-    function animateHeadline($headlines) {
-      var duration = animationDelay;
-        var headline = $headlines;
-        var spanWrapper = headline.find('.cd-words-wrapper'),
-        newWidth = spanWrapper.width() + 10
-        spanWrapper.css('width', newWidth);
-        setTimeout(function(){ hideWord( headline.find('.is-visible').eq(0) ) }, duration);
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+  
+    if (this.isDeleting) { delta /= 3; }
+  
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 400;
     }
   
-    function hideWord($word) {
-      var nextWord = takeNext($word);
-      $word.parents('.cd-words-wrapper').animate({ width : '2px' }, revealDuration, function(){
-        switchWord($word, nextWord);
-        showWord(nextWord);
-      });
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  };
   
+  window.onload = function() {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
     }
-  
-    function showWord($word, $duration) {
-      $word.parents('.cd-words-wrapper').animate({ 'width' : $word.width() + 10 }, revealDuration, function(){ 
-        setTimeout(function(){ hideWord($word) }, revealAnimationDelay); 
-      });
-    }
-  
-    function takeNext($word) {
-      return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
-    }
-  
-    function switchWord($oldWord, $newWord) {
-      $oldWord.removeClass('is-visible').addClass('is-hidden');
-      $newWord.removeClass('is-hidden').addClass('is-visible');
-    }
-  });
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-left: 0.08em solid #fff }";
+    document.body.appendChild(css);
+  };
 
-
-  // document.addEventListener('DOMContentLoaded', function() {
-  //   var animationDelay = 2500,
-  //   revealDuration = 600,
-  //   revealAnimationDelay = 1500;
-  //   initHeadline();
-    
-  //   function initHeadline() {
-  //     animateHeadline();
-  //   }
-  
-  //   function animateHeadline($headlines) {
-  //     var duration = animationDelay;
-  //     var spanWrapper = document.querySelector('.cd-headline .cd-words-wrapper');
-  //     newWidth = spanWrapper.offsetWidth + 10;
-  //     spanWrapper.style.width = newWidth;
-  //     setTimeout(function(){ hideWord() }, duration);
-  //   }
-  
-  //   function hideWord($word) {
-  //     // var nextWord = takeNext($word);
-  //     parentWord = document.querySelector(".cd-headline .cd-words-wrapper .is-visible").parentElement
-      
-  //     setTimeout(function(){
-  //       parentWord.style.transition = 'width 1s';
-  //       parentWord.addEventListener('transitionend', 
-  //         (event) => {  console.log("hi"); });
-  //       parentWord.style.width = "2px";
-  //     },revealDuration);
-  //     // parentWord.animate({ width : '2px' }, revealDuration, function(){
-  //     //   console.log("enter");
-  //     // });
-  //   }
-  
-  //   // function showWord($word, $duration) {
-  //   //   $word.parents('.cd-words-wrapper').animate({ 'width' : $word.width() + 10 }, revealDuration, function(){ 
-  //   //     setTimeout(function(){ hideWord($word) }, revealAnimationDelay); 
-  //   //   });
-  //   // }
-  
-  //   // function takeNext($word) {
-
-  //   //   return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
-  //   // }
-  
-  //   // function switchWord($oldWord, $newWord) {
-  //   //   $oldWord.removeClass('is-visible').addClass('is-hidden');
-  //   //   $newWord.removeClass('is-hidden').addClass('is-visible');
-  //   // }
-  // });
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    odo = document.querySelectorAll('.odometer');
-    for (var i = 0  ;  i < odo.length ; i++){
-      var countNumber = odo[i].getAttribute("data-count");
-      odo[i].innerHTML = countNumber;
+  document.addEventListener("DOMContentLoaded", () => {
+    function counter(id, start, end, duration) {
+     let obj = document.getElementById(id),
+      current = start,
+      range = end - start,
+      increment = end > start ? 1 : -1,
+      step = Math.abs(Math.floor(duration / range)),
+      timer = setInterval(() => {
+       current += increment;
+       obj.textContent = current;
+       if (current == end) {
+        clearInterval(timer);
+       }
+      }, step);
     }
-  })
-var slideIndex = 0;
-showSlides();
+    counter("count1", 0, 20, 1000);
+    counter("count2-first", 0, 1, 10);
+    counter("count2-second", 0, 700, 100);
+    counter("count3-first", 0, 1, 10);
+    counter("count3-second", 0, 300, 100);
+    counter("count4-first", 0, 1, 20);
+    counter("count4-second", 0, 200, 100);
 
-function showSlides() {
-  var i;
-  var slides = document.querySelectorAll(".single-testimonial");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-    if(slides[i].classList.contains('isShowing')){
-      slides[i].classList.remove('isShowing')
+   });
+
+   document.addEventListener('DOMContentLoaded', function() {
+    pagenum = 1;
+    function AutoRotate() {
+       var allElements = document.getElementsByTagName('label');
+       for (var i = 0 ; i < allElements.length ; i++) {
+           var myfor = allElements[i].getAttribute('for');
+           if ((myfor !== null) && (myfor == ('slide_' + pagenum))) {
+               allElements[i].click();
+               break;
+           }
+       }
+       if (pagenum == 4) {
+           pagenum = 1;
+       } else {
+           pagenum++;
+       }
     }
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" onThis", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  
-  slides[slideIndex-1].classList.add('isShowing');
-  dots[slideIndex-1].className += " onThis";
-  setTimeout(showSlides, 2000);
-}
+    setInterval(AutoRotate, 5000);
+ });
+
 projectButtons = document.querySelectorAll("#project-flters li");
 for (var i = 0 ; i<projectButtons.length; i++){
   projectButtons[i].addEventListener("click" , function(){

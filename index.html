@@ -58,11 +58,11 @@
                         <h3>به صفحه من خوش آمدید</h3>
                         <h1 class="cd-headline clip">
                             <span class="blc">من</span>
-                            <span class="cd-words-wrapper">
-                                <b class="is-visible">آوانا هستم</b>
-                                <b>توسعه دهنده وب هستم</b>
-                                <b>عکاس هستم</b>
-                            </span>
+
+                            <span
+                            class="txt-rotate"
+                            data-period="2000"
+                            data-rotate='[ "آوانا هستم", "توسعه دهنده وب هستم", "عکاس هستم"]'></span>
                         </h1>
                         <div class="social-media"> <a href="#"><i class="fa fa-facebook"></i> </a>
                             <a href="#"><i class="fa fa-twitter"></i> </a>
@@ -207,7 +207,8 @@
                     <div class="counter-content-box counter-item">
                         <div class="single-counter-box">
                             <div class="single-counter"> <i class="pe-7s-edit"></i>
-                                <h3 dir="ltr" class="odometer" data-count="20">00</h3>
+                                
+                                <h3 dir="ltr" class="odometer"><span id="count1"></span></h3>
                                 <p>سال های تجربه</p>
                             </div>
                         </div>
@@ -215,7 +216,7 @@
                     <div class="counter-content-box counter-item">
                         <div class="single-counter-box">
                             <div class="single-counter"> <i class="pe-7s-cloud-download"></i>
-                                <h3 dir="ltr" class="odometer" data-count="1700">00</h3>
+                                <h3 dir="ltr" class="odometer" ><span id="count2-first"></span>,<span id="count2-second"></span></h3>
                                 <p>پروژه های کامل</p>
                             </div>
                         </div>
@@ -223,7 +224,7 @@
                     <div class="counter-content-box counter-item">
                         <div class="single-counter-box">
                             <div class="single-counter"> <i class="pe-7s-smile"></i>
-                                <h3 dir="ltr" class="odometer" data-count="1300">00</h3>
+                                <h3 dir="ltr" class="odometer"><span id="count3-first"></span>,<span id="count3-second"></span></h3>
                                 <p>مشتری راضی</p>
                             </div>
                         </div>
@@ -231,7 +232,7 @@
                     <div class="counter-content-box counter-item">
                         <div class="single-counter-box">
                             <div class="single-counter"> <i class="pe-7s-cup"></i>
-                                <h3 dir="ltr" class="odometer" data-count="1200">00</h3>
+                                <h3 dir="ltr" class="odometer"><span id="count4-first"></span>,<span id="count4-second"></span></h3>
                                 <p>جایزه</p>
                             </div>
                         </div>
@@ -429,79 +430,92 @@
             </div>
             <div class="row">
                 <div class="review-box">
-                    <div id="testimonial-slide">
-                        <div class="single-testimonial">
-                            <div class="testi-content-inner">
-                                <div class="avatar">
-                                    <img src="assets/images/avatar-images/avatar-1.jpg" alt="testimonial">
+                    <div dir="ltr" class="testimonial_slider">
+                        <input type="radio" name="slider_2" id="slide_1" checked />
+                        <input type="radio" name="slider_2" id="slide_2" />
+                        <input type="radio" name="slider_2" id="slide_3" />
+                        <input type="radio" name="slider_2" id="slide_4" />
+                        <div class="boo_inner clearfix">
+                            <div class="slide_content">
+                                <div class="testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="avatar">
+                                            <img src="assets/images/avatar-images/avatar-1.jpg" alt="testimonial">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب</p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="bio-info">
+                                                <h3 class="name">استیو جابز</h3><span>شرکت اپل</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="testimonial-content">
-                                    <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب</p>
+                            </div>
+                            <div class="slide_content">
+                                <div class="testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="avatar">
+                                            <img src="assets/images/avatar-images/avatar-2.jpg" alt="testimonial">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
+                                            </p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="bio-info">
+                                                <h3 class="name">رابن هاستن</h3><span>شرکت گوگل</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="testimonial-bio">
-                                    <div class="bio-info">
-                                        <h3 class="name">استیو جابز</h3><span>شرکت اپل</span>
+                            </div>
+                            <div class="slide_content">
+                                <div class="testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="avatar">
+                                            <img src="assets/images/avatar-images/avatar-3.jpg" alt="testimonial">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
+                                            </p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="bio-info">
+                                                <h3 class="name">صابر العبید</h3><span>شرکت اپل</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide_content">
+                                <div class="testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="avatar">
+                                            <img src="assets/images/avatar-images/avatar-4.jpg" alt="testimonial">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
+                                            </p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="bio-info">
+                                                <h3 class="name">مونیکا فرایزر</h3><span>شرکت اپل</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="single-testimonial">
-                            <div class="testi-content-inner">
-                                <div class="avatar">
-                                    <img src="assets/images/avatar-images/avatar-2.jpg" alt="testimonial">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
-                                    </p>
-                                </div>
-                                <div class="testimonial-bio">
-                                    <div class="bio-info">
-                                        <h3 class="name">رابن هاستن</h3><span>شرکت گوگل</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial">
-                            <div class="testi-content-inner">
-                                <div class="avatar">
-                                    <img src="assets/images/avatar-images/avatar-3.jpg" alt="testimonial">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
-                                    </p>
-                                </div>
-                                <div class="testimonial-bio">
-                                    <div class="bio-info">
-                                        <h3 class="name">صابر العبید</h3><span>شرکت اپل</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial">
-                            <div class="testi-content-inner">
-                                <div class="avatar">
-                                    <img src="assets/images/avatar-images/avatar-4.jpg" alt="testimonial">
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>در این سرویس امکان عکاسی وجود دارد و امکان انجام کار طراحی عکس در حالت های متفاوت بازمان کم و هزینه مناسب
-                                    </p>
-                                </div>
-                                <div class="testimonial-bio">
-                                    <div class="bio-info">
-                                        <h3 class="name">مونیکا فرایزر</h3><span>شرکت اپل</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="controls">
+                            <label for="slide_1"></label>
+                            <label for="slide_2"></label>
+                            <label for="slide_3"></label>
+                            <label for="slide_4"></label>
                         </div>
                     </div>
-                    <div dir="ltr" class="dot-wrapper">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div> 
-                </div>
-                    
+                </div>    
             </div>
         </div>
     </section>
@@ -674,9 +688,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

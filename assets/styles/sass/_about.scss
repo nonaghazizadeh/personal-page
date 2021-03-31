@@ -1,3 +1,5 @@
+$about-bg-color:rgba(62, 64, 72, 25%);
+$about-image-bg-color: rgba(101, 102, 109,0.25);
 .about-container{
     display: flex !important;
     align-items: center !important;
@@ -12,7 +14,7 @@
     &:hover{
         padding: 0 0 0 20px;
         &:after{
-            background: rgba(62, 64, 72, 25%);
+            background: $about-bg-color;
             left: 5px;
             top: -15px;
             right: 15px;
@@ -21,7 +23,7 @@
     }
     &:after{
         content: "";
-        background: rgba(101, 102, 109,0.25);
+        background: $about-image-bg-color;
         position: absolute;
         left: 15px;
         right: 5px;

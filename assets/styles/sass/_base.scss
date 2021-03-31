@@ -3,6 +3,9 @@ $white: #fff;
 $background-color: #333439;
 $pink: #d81356;
 $text-color:#c5c5c5;
+$underline-color: rgba(0, 0, 0, 0);
+$underline-color-middle:rgb(165, 165, 165);
+$orange-text-color: #ffc209;
 *,
 ::after,
 ::before {
@@ -131,9 +134,9 @@ body {
       &:after{
         background-image: -webkit-linear-gradient(
           left,
-          rgba(0, 0, 0, 0),
-          rgb(165, 165, 165),
-          rgba(0, 0, 0, 0)
+          $underline-color,
+          $underline-color-middle,
+          $underline-color
           );
         position: absolute;
         left: 0;
@@ -168,7 +171,7 @@ body {
   }
   
   .color-text {
-    color: #ffc209;
+    color: $orange-text-color;
   }
 
     
