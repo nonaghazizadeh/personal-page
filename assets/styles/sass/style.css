@@ -863,20 +863,25 @@ ul {
   display: none;
 }
 
-.testimonial_slider #slide_1:checked ~ .boo_inner {
-  margin-left: 0;
+.testimonial_slider .slide_content {
+  width: 25%;
+  float: left;
 }
 
-.testimonial_slider #slide_2:checked ~ .boo_inner {
-  margin-left: -100%;
+.testimonial_slider .slide-controls {
+  text-align: center;
 }
 
-.testimonial_slider #slide_3:checked ~ .boo_inner {
-  margin-left: -200%;
-}
-
-.testimonial_slider #slide_4:checked ~ .boo_inner {
-  margin-left: -300%;
+.testimonial_slider .slide-controls label {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  display: inline-block;
+  background: #d6d6d6;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  cursor: pointer;
 }
 
 .testimonial_slider .boo_inner {
@@ -887,31 +892,35 @@ ul {
   transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.testimonial_slider .slide_content {
-  width: 25%;
-  float: left;
+.testimonial_slider #slide_1:checked ~ .boo_inner {
+  margin-left: 0;
 }
 
-.testimonial_slider #controls {
-  text-align: center;
+.testimonial_slider #slide_1:checked ~ .slide-controls label:nth-child(1) {
+  background: #869791;
 }
 
-.testimonial_slider #controls label {
-  width: 8px;
-  height: 8px;
-  margin: 0 2px;
-  display: inline-block;
-  background: #d6d6d6;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  cursor: pointer;
+.testimonial_slider #slide_2:checked ~ .boo_inner {
+  margin-left: -100%;
 }
 
-.testimonial_slider #slide_1:checked ~ #controls label:nth-child(1),
-.testimonial_slider #slide_2:checked ~ #controls label:nth-child(2),
-.testimonial_slider #slide_3:checked ~ #controls label:nth-child(3),
-.testimonial_slider #slide_4:checked ~ #controls label:nth-child(4) {
+.testimonial_slider #slide_2:checked ~ .slide-controls label:nth-child(2) {
+  background: #869791;
+}
+
+.testimonial_slider #slide_3:checked ~ .boo_inner {
+  margin-left: -200%;
+}
+
+.testimonial_slider #slide_3:checked ~ .slide-controls label:nth-child(3) {
+  background: #869791;
+}
+
+.testimonial_slider #slide_4:checked ~ .boo_inner {
+  margin-left: -300%;
+}
+
+.testimonial_slider #slide_4:checked ~ .slide-controls label:nth-child(4) {
   background: #869791;
 }
 
