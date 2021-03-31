@@ -619,6 +619,12 @@
   }
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .wrapper img {
+    max-width: 80%  !important;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .review-box {
     -webkit-box-flex: 0;

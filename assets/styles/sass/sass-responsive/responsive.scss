@@ -1,4 +1,4 @@
-@import 'mixings';
+@import 'mixins';
 .container{
     @include breakpoint(desktop){
         max-width: 960px;
@@ -394,18 +394,6 @@
         top: 741.146px;
     }
   }
-//   .project-five-web{
-//     @include breakpoint(desktop){
-//         position: absolute;
-//         left: 0px;
-//         top: 386.917px;
-//     }
-//     @include breakpoint(tablet){
-//         position: absolute;
-//         left: 360px;
-//         top: 741.146px;
-//     }
-//   }
 
   .project-six-all{
     @include breakpoint(desktop){
@@ -444,6 +432,15 @@
         top: 305px;
     }
   }
+
+  .wrapper {
+     img {
+        @include breakpoint(phone){
+            max-width: 80%  !important;
+        }
+       
+     }
+ }
   .review-box {
     @include breakpoint(tablet){
         flex: 0 0 100%;
