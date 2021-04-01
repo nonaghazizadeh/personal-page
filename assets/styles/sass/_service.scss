@@ -1,11 +1,6 @@
-$white: #fff;
-$pink :#d81356;
-$single-service-bg-color: #1e1f25;
-$service-bg-color:#333439;
-$border-color: #2a2b30;
-$icon-bg-color: rgba(200, 200, 200, 0.07);
+@import 'theme';
 .service-area{
-    background: $service-bg-color !important;
+    background: $background-color !important;
   }
 
   .services-item {

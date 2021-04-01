@@ -1,7 +1,4 @@
-$white: #fff;
-$paragraph-color:#a5a5a5;
-$contact-form-bg-color: #1b1d23;
-$input-color: #505050;
+@import 'theme';
 .contact-area {
     background: url(../../images/other-images/contact-bg.png);
     background-repeat: no-repeat;
@@ -39,7 +36,7 @@ $input-color: #505050;
       p {
         font-weight: 500;
         font-size: 14px;
-        color: $paragraph-color;
+        color: $contact-info-color;
         text-transform: capitalize;
       }
   }

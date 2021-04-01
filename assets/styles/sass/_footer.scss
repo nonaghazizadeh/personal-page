@@ -1,9 +1,7 @@
-$footer-bg-color: #333439;
-$pink: #d81356;
-$white : #fff;
+@import 'theme';
 .footer-area {
     padding: 50px 0;
-    background: $footer-bg-color !important;
+    background: $background-color !important;
   
   }
   .footer-social-media {

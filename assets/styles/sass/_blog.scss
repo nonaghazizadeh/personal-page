@@ -1,11 +1,9 @@
-$blog-bg-color: #333439;
-$pink: #d81356;
-$white: #fff;
+@import 'theme';
 .blog-area{
-    background: $blog-bg-color !important;
+    background: $background-color !important;
     & .single-blog {
         position: relative;
-        background: #383940;
+        background: $single-blog-color;
         border-bottom: 2px solid $pink;
         img {
             -webkit-transition: all 0.5s;

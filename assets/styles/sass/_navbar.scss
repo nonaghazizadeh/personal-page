@@ -1,8 +1,4 @@
-$transparent: #ffffff00;
-$box-shadow: rgba(0, 0, 0, 0.06);
-$white: #fff;
-$black: #000;
-$toggle-background: #1b1b1b;
+@import 'theme';
 .collapse{
     display: none;
 }

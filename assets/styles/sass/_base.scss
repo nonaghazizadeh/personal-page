@@ -1,11 +1,4 @@
-$primary-color: #2b2c30;
-$white: #fff;
-$background-color: #333439;
-$pink: #d81356;
-$text-color:#c5c5c5;
-$underline-color: rgba(0, 0, 0, 0);
-$underline-color-middle:rgb(165, 165, 165);
-$orange-text-color: #ffc209;
+@import 'theme';
 *,
 ::after,
 ::before {

@@ -1,15 +1,6 @@
-
-$project-bg-color: #333439; 
-$project-list-bg-color: #2b2b2b;
-$white : #fff;
-$box-shadow: rgba(0, 0, 0, 0.07);
-$overlay-bg-color: rgb(0, 0, 0);
-$orange-text-color: #ffc209;
-$pink: #d81356;
-$black: rgb(0,0,0);
-$blur-black: rgba(0,0,0,0.5);
+@import 'theme';
 .project-area{
-    background: $project-bg-color !important;
+    background: $background-color !important;
     position: relative;
     & .project-grid-item {
         overflow: hidden;
@@ -83,7 +74,7 @@ $blur-black: rgba(0,0,0,0.5);
         transition: all 0.5s;
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
-        background-color: $overlay-bg-color;
+        background-color: $black;
         & .project-content {
             position: absolute;
             top: 50%;

@@ -1,8 +1,4 @@
-$white: #fff;
-$pink:#d81356;
-$paragraph-color: #ccc;
-$dot-color: #d6d6d6;
-$dot-hover-color:#869791;
+@import 'theme';
 .testimonial-area {
     background: url(../../images/other-images/review-bg.png);
     background-repeat: no-repeat;

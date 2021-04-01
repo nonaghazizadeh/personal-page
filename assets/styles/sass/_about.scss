@@ -1,5 +1,4 @@
-$about-bg-color:rgba(62, 64, 72, 25%);
-$about-image-bg-color: rgba(101, 102, 109,0.25);
+@import 'theme';
 .about-container{
     display: flex !important;
     align-items: center !important;
