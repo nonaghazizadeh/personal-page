@@ -37,17 +37,17 @@ document.querySelector(".navbar-toggler").addEventListener("click", function(){
     })
   }
 
-  var TxtRotate = function(el, toRotate, period) {
+  var txtRotate = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
+    this.period = parseInt(period, 10);
     this.txt = '';
     this.tick();
     this.isDeleting = false;
   };
   
-  TxtRotate.prototype.tick = function() {
+  txtRotate.prototype.tick = function() {
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
   
@@ -56,44 +56,37 @@ document.querySelector(".navbar-toggler").addEventListener("click", function(){
     } else {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
-  
     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    var element = this;
+    var time = 150 - Math.random() * 100;
   
-    var that = this;
-    var delta = 200 - Math.random() * 100;
-  
-    if (this.isDeleting) { delta /= 3; }
+    if (this.isDeleting) { time /= 3; }
   
     if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
+      time = this.period;
       this.isDeleting = true;
     } else if (this.isDeleting && this.txt === '') {
       this.isDeleting = false;
       this.loopNum++;
-      delta = 400;
+      time = 400;
     }
-  
     setTimeout(function() {
-      that.tick();
-    }, delta);
+      element.tick();
+    }, time);
   };
-  
-  window.onload = function() {
+
+  document.addEventListener("DOMContentLoaded", function()  {
     var elements = document.getElementsByClassName('txt-rotate');
     for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-rotate');
       var period = elements[i].getAttribute('data-period');
       if (toRotate) {
-        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        new txtRotate(elements[i], JSON.parse(toRotate), period);
       }
     }
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".txt-rotate > .wrap { border-left: 0.08em solid #fff }";
-    document.body.appendChild(css);
-  };
+   });
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", function()  {
     function counter(id, start, end, duration) {
      let obj = document.getElementById(id),
       current = start,
@@ -295,12 +288,11 @@ function bgChange(){
   for(var i = 0 ; i <overlay.length ; i++){
     overlay[i].style.display = "none";
   }
-
   navbar = document.querySelector("nav");
   navbar.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
 
   document.body.style.overflow = "hidden";
-    document.body.style.height = "100%";
+  document.body.style.height = "100%";
 }
 var modal1 = document.getElementById("myModal1");
 
@@ -309,6 +301,7 @@ img1.onclick = function(){
   modal1.style.display = "block";
   bgChange();
 }
+
 var next1 = document.getElementById("nextbtn1");
 next1.onclick = function(){
     modal1.style.display = "none";
@@ -460,3 +453,39 @@ window.onclick = function(event) {
     }
   } 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const duration = 300;
+
+  const scrollToTarget = function(target) {
+    const top = target.getBoundingClientRect().top;
+    const startPos = window.pageYOffset;
+    let startTime = null;
+    let requestId;
+
+    const loop = function(currentTime) {
+        if (!startTime) {
+            startTime = currentTime;
+        }
+        const time = currentTime - startTime;
+        const percent = Math.min(time / duration, 1);
+        window.scrollTo(0, startPos + top * percent);
+        
+        if (time < duration) {
+            requestId = window.requestAnimationFrame(loop);
+        } else {
+            window.cancelAnimationFrame(requestId);
+        }
+    };
+    requestId = window.requestAnimationFrame(loop);
+  };
+
+  const clickHandler = function(e) {
+      e.preventDefault();
+      scrollToTarget(document.getElementById(e.target.getAttribute('href').substr(1)));
+  };
+  const navLinks = document.querySelectorAll(".nav-link");
+  for (var i = 0 ; i < navLinks.length ; i++){
+    navLinks[i].addEventListener("click", clickHandler);
+  } 
+});
