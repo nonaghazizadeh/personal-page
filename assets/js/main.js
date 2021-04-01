@@ -438,13 +438,25 @@ for( var i = 0 ; i<span.length ; i++){
     }
 }
 
-// window.onclick = function(event) {
-//   if (event.target != modal) {
-//     modal1.style.display = "none";
-//     modal2.style.display = "none";
-//         modal3.style.display = "none";
-//         modal4.style.display = "none";
-//       document.body.style.overflow = "auto"; // ADD THIS LINE
-//       document.body.style.height = "auto";  
-// }
-// }
+window.onclick = function(event) {
+  var outside = document.querySelectorAll("td");
+  for (var i = 0 ; i < outside.length; i++){
+    if (event.target == outside[i]) {
+      modal1.style.display = "none";
+      modal2.style.display = "none";
+      modal3.style.display = "none";
+      modal4.style.display = "none";
+      modal5.style.display = "none";
+      modal6.style.display = "none";
+  
+      document.body.style.overflow = "auto";
+      document.body.style.height = "auto";  
+      navbar = document.querySelector("nav");
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+      overlay = document.querySelectorAll(".project-img-overlay")
+      for(var i = 0 ; i <overlay.length ; i++){
+        overlay[i].style.display = "block";
+      }
+    }
+  } 
+}
