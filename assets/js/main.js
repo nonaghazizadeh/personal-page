@@ -488,4 +488,10 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0 ; i < navLinks.length ; i++){
     navLinks[i].addEventListener("click", clickHandler);
   } 
+  let homebtn1 = document.querySelector(".home-btn-1")
+  homebtn1.addEventListener("click",clickHandler);
+  let homebtn2 = document.querySelector(".home-btn-2")
+  homebtn2.addEventListener("click", clickHandler);
+
 });
+
