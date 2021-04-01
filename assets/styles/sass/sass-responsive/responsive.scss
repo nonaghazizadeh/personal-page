@@ -1,4 +1,5 @@
 @import 'mixins';
+
 .container{
     @include breakpoint(desktop){
         max-width: 960px;
@@ -78,7 +79,6 @@
             @include breakpoint(phone){
                 position: relative;
                 padding-right: 10px;
-                
                 text-align: right;  
                 margin-bottom: 10px;
             }
@@ -121,10 +121,7 @@
     flex: 0 0 100%;
     max-width: 100%;
     @include breakpoint(desktop){
-        position: relative;
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;     
+        @include boxSize();    
     }
 
 }
@@ -141,20 +138,14 @@
         flex: 0 0 100%;
         max-width: 100%;    
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
 }
 .about-text-box{
     @include breakpoint(desktop){
         flex: 0 0 58.333333%;
         max-width: 58.333333%;  
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
 }
 .about-content {
     @include breakpoint(tablet){
@@ -203,10 +194,7 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
   }
 
   .services-item {
@@ -227,10 +215,7 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
   }
 
 
@@ -444,18 +429,12 @@
     @include breakpoint(tablet){
         flex: 0 0 100%;
         max-width: 100%;
-        position: relative;
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
+        @include boxSize();
     }
     @include breakpoint(phone){
         flex: 0 0 100%;
         max-width: 100%;
-        position: relative;
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
+        @include boxSize();
     }
   }
 
@@ -468,10 +447,7 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
   }
 
   .blog-item {
@@ -493,10 +469,7 @@
         flex: 0 0 41.666667%;
     max-width: 41.666667%;
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
   }
 
   .contact-form-box {
@@ -508,10 +481,7 @@
         flex: 0 0 58.333333%;
         max-width: 58.333333%;
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
   }
 
   .name-box,
@@ -528,10 +498,7 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
   }
 
   .footer-box {
@@ -543,10 +510,7 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include boxSize();
   }
 
 

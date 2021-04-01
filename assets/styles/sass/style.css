@@ -365,6 +365,11 @@ ul {
   background: #030510;
 }
 
+.txt-rotate > .wrap {
+  border-left: 0.08em solid #fff;
+  margin-right: 5px;
+}
+
 .home-text {
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
@@ -400,6 +405,10 @@ ul {
 
 .home-content .home-btn-2 {
   margin-right: 15px;
+}
+
+.txt-rotate > .wrap {
+  border-left: 0.08em solid #fff;
 }
 
 .social-media a {

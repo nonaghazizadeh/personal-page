@@ -37,6 +37,14 @@ $home-bg-color: rgb(3,5,16);
         background: $home-bg-color;
     }
 }
+
+.txt-rotate {
+  > .wrap { 
+    border-left: 0.08em solid $white; 
+    margin-right: 5px;
+  }
+}
+
 .home-text{
     align-items: center !important;
     display: flex !important;
@@ -66,6 +74,11 @@ $home-bg-color: rgb(3,5,16);
         margin-right: 15px;
       }
   }
+
+  .txt-rotate {
+    > .wrap { border-left: 0.08em solid #fff }
+  }
+  
 
   .social-media {
       a {
