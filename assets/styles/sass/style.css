@@ -223,7 +223,7 @@ ul {
 }
 
 .navbar.navbar-reduce .nav-link {
-  color: #000;
+  color: black;
 }
 
 .navbar.navbar-reduce .nav-item {
@@ -233,7 +233,7 @@ ul {
 }
 
 .navbar.navbar-reduce .navbar-brand {
-  color: #000;
+  color: black;
 }
 
 .navbar.navbar-reduce .navbar-toggler span {
@@ -380,6 +380,8 @@ ul {
   position: relative !important;
   z-index: 9;
   text-align: right !important;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .home-content {
@@ -656,8 +658,8 @@ ul {
   background-color: #2b2b2b;
   -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
-  -webkit-box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.07);
-          box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.06);
 }
 
 .project-list .nav li:hover, .project-list .nav li.filter-active {

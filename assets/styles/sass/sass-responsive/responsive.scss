@@ -9,7 +9,10 @@
     }
     @include breakpoint(phone){
         max-width: 540px;
+    }@include breakpoint(largeScreen){
+        max-width: 1140px;
     }
+
 }
 .navbar {
     flex-flow: row nowrap;
@@ -229,6 +232,7 @@
   }
 
   .project-container-all {
+    
     @include breakpoint(desktop){
         position: relative;
         height: 658.584px;
@@ -236,6 +240,10 @@
     @include breakpoint(tablet){
         position: relative;
         height: 1177.29px;
+    }
+    @include breakpoint(largeScreen){
+        position: relative;
+        height: 782.406px;
     }
     
   }
@@ -248,6 +256,10 @@
         position: relative;
         height: 872.292px;
     }
+    @include breakpoint(largeScreen){
+        position: relative;
+        height: 460.75px;
+    }
     
   } 
   .project-container-web {
@@ -259,6 +271,11 @@
         position: relative;
         height: 741.146px;
     }
+    @include breakpoint(largeScreen){
+        position: relative;
+        height: 643.312px;
+        
+    }
     
   } 
   .project-container-photography {
@@ -269,6 +286,10 @@
     @include breakpoint(tablet){
         position: relative;
         height: 610px;
+    }
+    @include breakpoint(largeScreen){
+        position: relative;
+        height: 321.656px;
     }
   }
   .project-box {
@@ -286,6 +307,7 @@
   .project-one-web,
   .project-one-brand,
   .project-two-photography {
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 0px;
@@ -296,9 +318,15 @@
         left: 0px;
         top: 0px;
     }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
   }
   
   .project-two-all{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 320px;
@@ -309,9 +337,15 @@
         left: 360px;
         top: 0px;
     }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 379.99px;
+        top: 0px;
+    }
   }
 
   .project-three-all{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 640px;
@@ -322,11 +356,17 @@
         left: 360px;
         top: 305px;
     }
+    @include breakpoint(desktop){
+        position: absolute;
+        left: 759.98px;
+        top: 0px;
+    }
   }
 
   .project-three-brand,
   .project-three-web,
   .project-five-photography{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 320px;
@@ -337,9 +377,15 @@
         left: 360px;
         top: 0px;
     }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 379.99px;
+        top: 0px;
+    }
   }
 
   .project-four-all{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 320px;
@@ -350,10 +396,16 @@
         left: 0px;
         top: 436.146px;
     }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 379.99px;
+        top: 321.656px;
+    }
   }
 
   .project-four-brand,
   .project-five-web{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 640px;
@@ -363,6 +415,11 @@
         position: absolute;
         left: 0px;
         top: 436.146px;
+    }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 759.98px;
+        top: 0px;
     }
   }
 
@@ -377,9 +434,15 @@
         left: 360px;
         top: 741.146px;
     }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 0px;
+        top: 460.75px;
+    }
   }
 
   .project-six-all{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 640px;
@@ -390,9 +453,15 @@
         left: 0px;
         top: 872.292px;
     }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 759.98px;
+        top: 460.75px;
+    }
   }
 
   .project-six-web{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 640px;
@@ -403,8 +472,14 @@
         left: 360px;
         top: 436.146px
     }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 759.98px;
+        top: 321.656px;
+    }
   }
   .project-six-photography{
+    
     @include breakpoint(desktop){
         position: absolute;
         left: 640px;
@@ -414,6 +489,11 @@
         position: absolute;
         left: 0px;
         top: 305px;
+    }
+    @include breakpoint(largeScreen){
+        position: absolute;
+        left: 759.98px;
+        top: 0px;
     }
   }
 

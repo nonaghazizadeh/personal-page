@@ -16,6 +16,12 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
 .navbar {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -387,6 +393,13 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .project-container-all {
+    position: relative;
+    height: 782.406px;
+  }
+}
+
 @media (min-width: 991px) {
   .project-container-brand {
     position: relative;
@@ -398,6 +411,13 @@
   .project-container-brand {
     position: relative;
     height: 872.292px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-container-brand {
+    position: relative;
+    height: 460.75px;
   }
 }
 
@@ -415,6 +435,13 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .project-container-web {
+    position: relative;
+    height: 643.312px;
+  }
+}
+
 @media (min-width: 991px) {
   .project-container-photography {
     position: relative;
@@ -426,6 +453,13 @@
   .project-container-photography {
     position: relative;
     height: 610px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-container-photography {
+    position: relative;
+    height: 321.656px;
   }
 }
 
@@ -469,6 +503,17 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .project-one-all,
+  .project-one-web,
+  .project-one-brand,
+  .project-two-photography {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+
 @media (min-width: 991px) {
   .project-two-all {
     position: absolute;
@@ -481,6 +526,14 @@
   .project-two-all {
     position: absolute;
     left: 360px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-two-all {
+    position: absolute;
+    left: 379.99px;
     top: 0px;
   }
 }
@@ -502,6 +555,14 @@
 }
 
 @media (min-width: 991px) {
+  .project-three-all {
+    position: absolute;
+    left: 759.98px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 991px) {
   .project-three-brand,
   .project-three-web,
   .project-five-photography {
@@ -517,6 +578,16 @@
   .project-five-photography {
     position: absolute;
     left: 360px;
+    top: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-three-brand,
+  .project-three-web,
+  .project-five-photography {
+    position: absolute;
+    left: 379.99px;
     top: 0px;
   }
 }
@@ -537,6 +608,14 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .project-four-all {
+    position: absolute;
+    left: 379.99px;
+    top: 321.656px;
+  }
+}
+
 @media (min-width: 991px) {
   .project-four-brand,
   .project-five-web {
@@ -552,6 +631,15 @@
     position: absolute;
     left: 0px;
     top: 436.146px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-four-brand,
+  .project-five-web {
+    position: absolute;
+    left: 759.98px;
+    top: 0px;
   }
 }
 
@@ -571,6 +659,14 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .project-five-all {
+    position: absolute;
+    left: 0px;
+    top: 460.75px;
+  }
+}
+
 @media (min-width: 991px) {
   .project-six-all {
     position: absolute;
@@ -584,6 +680,14 @@
     position: absolute;
     left: 0px;
     top: 872.292px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-six-all {
+    position: absolute;
+    left: 759.98px;
+    top: 460.75px;
   }
 }
 
@@ -603,6 +707,14 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .project-six-web {
+    position: absolute;
+    left: 759.98px;
+    top: 321.656px;
+  }
+}
+
 @media (min-width: 991px) {
   .project-six-photography {
     position: absolute;
@@ -616,6 +728,14 @@
     position: absolute;
     left: 0px;
     top: 305px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-six-photography {
+    position: absolute;
+    left: 759.98px;
+    top: 0px;
   }
 }
 
