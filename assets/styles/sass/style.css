@@ -236,10 +236,6 @@ ul {
   color: black;
 }
 
-.navbar.navbar-reduce .navbar-toggler span {
-  background-color: #1b1b1b;
-}
-
 .navbar.navbar-trans .nav-item {
   position: relative;
   padding-right: 10px;
@@ -248,6 +244,10 @@ ul {
 
 .navbar.navbar-trans .nav-link {
   color: #fff;
+}
+
+.navbar-reduce .navbar-toggler span {
+  background-color: #1b1b1b;
 }
 
 .navbar-brand {
@@ -568,7 +568,7 @@ ul {
   transform: scale(1.1);
 }
 
-.single-services-box:hover .services-icon i:after {
+.single-services-box:hover .service-icon::after {
   background: #d81356;
   border: 2px solid #d81356;
   -webkit-transform: scale(0.98);
@@ -642,7 +642,7 @@ ul {
   position: relative;
 }
 
-.project-list .nav li {
+.filter {
   position: relative;
   font-size: 14px;
   line-height: 15px;
@@ -662,7 +662,7 @@ ul {
           box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.06);
 }
 
-.project-list .nav li:hover, .project-list .nav li.filter-active {
+.filter:hover, .filter.filter-active {
   color: #fff;
   background: #d81356;
   -webkit-transition: all 0.5s ease-in-out 0s;
@@ -700,7 +700,19 @@ ul {
   background-color: black;
 }
 
-.project-item .project-img-overlay .project-content {
+.project-item:hover .project-img-overlay {
+  opacity: 0.9;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.project-item:hover .project-img-overlay .project-text {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-content {
   position: absolute;
   top: 50%;
   left: 0;
@@ -714,7 +726,7 @@ ul {
   overflow: hidden;
 }
 
-.project-item .project-img-overlay .project-content h4 {
+.project-content h4 {
   color: #fff;
   font-size: 18px;
   letter-spacing: 0.5px;
@@ -730,7 +742,7 @@ ul {
   transition: all 0.6s;
 }
 
-.project-item .project-img-overlay .project-content h6 {
+.project-content h6 {
   color: #ffc209;
   margin-top: 5px;
   font-size: 14px;
@@ -743,18 +755,6 @@ ul {
   z-index: 7;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
-}
-
-.project-item:hover .project-img-overlay {
-  opacity: 0.9;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.project-item:hover .project-img-overlay .project-content h6, .project-item:hover .project-img-overlay .project-content h4 {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  opacity: 1;
 }
 
 .project-box {
@@ -995,29 +995,35 @@ ul {
   background: #333439 !important;
 }
 
-.blog-area .single-blog {
+.blog-area .post-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.single-blog {
   position: relative;
   background: #383940;
   border-bottom: 2px solid #d81356;
 }
 
-.blog-area .single-blog img {
+.single-blog img {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.blog-area .single-blog .blog-content {
-  padding: 30px 25px;
-}
-
-.blog-area .single-blog:hover img {
+.single-blog:hover img {
   -webkit-filter: none;
   filter: none;
   -webkit-transform: rotate(3deg) scale(1.1, 1.1);
   transform: rotate(3deg) scale(1.1, 1.1);
 }
 
-.blog-area .single-blog .blog-content h5 a {
+.blog-content {
+  padding: 30px 25px;
+}
+
+.blog-content h5 a {
   font-size: 18px;
   font-weight: 500;
   color: #fff;
@@ -1025,17 +1031,11 @@ ul {
   display: block;
 }
 
-.blog-area .single-blog .blog-content .blog-bottom-text-link a {
+.blog-content .blog-bottom-text-link a {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
   display: inline-block;
-}
-
-.blog-area .post-img {
-  position: relative;
-  overflow: hidden;
-  border-radius: 3px;
 }
 
 .blog-date {
@@ -1174,7 +1174,7 @@ textarea:focus {
   margin-bottom: 20px;
 }
 
-.footer-social-media a {
+.footer-icon {
   margin: 0 10px;
   color: #fff;
   font-size: 16px;
@@ -1189,7 +1189,7 @@ textarea:focus {
   z-index: 3;
 }
 
-.footer-social-media a:after {
+.footer-icon:after {
   content: "";
   width: 100%;
   height: 100%;
@@ -1205,11 +1205,11 @@ textarea:focus {
   transition: all 0.4s;
 }
 
-.footer-social-media a:hover {
+.footer-icon:hover {
   color: #fff;
 }
 
-.footer-social-media a:hover:after {
+.footer-icon:hover:after {
   background: #d81356;
   -webkit-transform: rotate(45deg) scale(0.98);
   transform: rotate(45deg) scale(0.98);

@@ -76,11 +76,8 @@
       }
   }
 
-  .single-services-box{
-      &:hover {
-        .services-icon{
-            i{
-                &:after {
+  .single-services-box:hover{
+        .service-icon::after{
                     background: $pink;
                     border: 2px solid $pink;
                     -webkit-transform: scale(0.98);
@@ -88,10 +85,7 @@
                     -ms-transform: scale(0.98);
                     -o-transform: scale(0.98);
                     transform: scale(0.98);
-                  }
-            } 
         } 
-      }
   }
 
   .services-text{

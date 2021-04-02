@@ -1,54 +1,53 @@
 @import 'theme';
 .blog-area{
     background: $background-color !important;
-    & .single-blog {
-        position: relative;
-        background: $single-blog-color;
-        border-bottom: 2px solid $pink;
-        img {
-            -webkit-transition: all 0.5s;
-            transition: all 0.5s;
-          }
-          & .blog-content {
-            padding: 30px 25px;
-          }
-          &:hover{
-              img{
-                -webkit-filter: none;
-                filter: none;
-                -webkit-transform: rotate(3deg) scale(1.1, 1.1);
-                -ms-transform: rotate(3deg) scale(1.1, 1.1);
-                transform: rotate(3deg) scale(1.1, 1.1);
-              }
-          }
-          & .blog-content{
-            h5{
-                a {
-                    font-size: 18px;
-                    font-weight: 500;
-                    color: $white;
-                    margin-bottom: 10px;
-                    display: block;
-                  }
-            } 
-            & .blog-bottom-text-link{
-                a {
-                    font-size: 16px;
-                    font-weight: 500;
-                    color: $white;
-                    display: inline-block;
-                  }
-            } 
-          } 
-      }
-      
       & .post-img {
         position: relative;
         overflow: hidden;
         border-radius: 3px;
       }
   }
+
+  .single-blog {
+    position: relative;
+    background: $single-blog-color;
+    border-bottom: 2px solid $pink;
+    img {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+      &:hover{
+          img{
+            -webkit-filter: none;
+            filter: none;
+            -webkit-transform: rotate(3deg) scale(1.1, 1.1);
+            -ms-transform: rotate(3deg) scale(1.1, 1.1);
+            transform: rotate(3deg) scale(1.1, 1.1);
+          }
+      }
+  }
   
+  .blog-content{
+    padding: 30px 25px;
+    h5{
+        a {
+            font-size: 18px;
+            font-weight: 500;
+            color: $white;
+            margin-bottom: 10px;
+            display: block;
+          }
+    }
+    & .blog-bottom-text-link{
+      a {
+          font-size: 16px;
+          font-weight: 500;
+          color: $white;
+          display: inline-block;
+        }
+    } 
+  } 
+
   .blog-date {
     position: absolute;
     top: 15px;

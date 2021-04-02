@@ -43,12 +43,8 @@
         & .navbar-brand {
             color: $black;
         }
-        & .navbar-toggler{
-            span{
-                background-color: $toggle-background;
-            }
-        }
     }
+
     &.navbar-trans{
         & .nav-item{
             position: relative;
@@ -60,6 +56,15 @@
         }
     }
 }  
+
+.navbar-reduce{
+    & .navbar-toggler{
+        span{
+            background-color: $toggle-background;
+        }
+    }
+    
+}
 
 .navbar-brand {
     display: inline-block;

@@ -4,10 +4,13 @@
     background: $background-color !important;
   
   }
-  .footer-social-media {
+
+  .footer-social-media{
     margin-bottom: 20px;
-    a {
-        margin: 0 10px;
+  }
+
+  .footer-icon{
+    margin: 0 10px;
         color: #fff;
         font-size: 16px;
         width: 35px;
@@ -45,7 +48,6 @@
                 transform: rotate(45deg) scale(0.98);
               }
           }
-      }
   }
 
   .copyright-area{
@@ -57,5 +59,4 @@
             font-weight: 500;
           }
       }
-  
   }
