@@ -1,7 +1,7 @@
-var nav = document.querySelector('nav');
-var navHeight = nav.offsetHeight;
+"use strict"
+const nav = document.querySelector('nav');
 document.querySelector(".navbar-toggler").addEventListener("click", function(){
-  mainNav = document.querySelector("#mainNav");
+  const mainNav = document.querySelector("#mainNav");
   if(! mainNav.classList.contains("navbar-reduce")){
     mainNav.classList.add('navbar-reduce');
     mainNav.classList.remove('navbar-trans');
@@ -9,19 +9,20 @@ document.querySelector(".navbar-toggler").addEventListener("click", function(){
 })
 
 window.addEventListener('scroll' , function(){
-  var pixels = 50;
+  const pixels = 50;
+  const navbar =  document.querySelector(".navbar");
   if(document.body.scrollTop > pixels || document.documentElement.scrollTop > pixels){
-    document.querySelector(".navbar").classList.add("navbar-reduce");
-    document.querySelector(".navbar").classList.remove("navbar-trans");
+    navbar.classList.add("navbar-reduce");
+    navbar.classList.remove("navbar-trans");
   }
   else{
-    document.querySelector(".navbar").classList.add("navbar-trans");
-    document.querySelector(".navbar").classList.remove("navbar-reduce");
+    navbar.classList.add("navbar-trans");
+    navbar.classList.remove("navbar-reduce");
   }
 });
 
 document.querySelector(".navbar-toggler").addEventListener("click", function(){
-  var togglerNav = document.querySelector("#navbarDefault");
+  const togglerNav = document.querySelector("#navbarDefault");
   if(togglerNav.classList.contains("collapse")){
     togglerNav.classList.remove("collapse");
   }
@@ -30,111 +31,108 @@ document.querySelector(".navbar-toggler").addEventListener("click", function(){
   }
 });
 
-  items = document.querySelectorAll('.js-scroll');
-  for (var i = 0 ; i <items.length ; i++){
-    items[i].addEventListener("click", function(){
-      document.querySelector("#navbarDefault").classList.add('collapse');
-    })
+const items = document.querySelectorAll('.js-scroll');
+const togglerNav = document.querySelector("#navbarDefault");
+for (let i = 0 ; i <items.length ; i++){
+  items[i].addEventListener("click", function(){
+    togglerNav.classList.add('collapse');
+  })
+}
+
+var txtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10);
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+txtRotate.prototype.tick = function() {
+  let i = this.loopNum % this.toRotate.length;
+  let fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
   }
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  let element = this;
+  let time = 150 - Math.random() * 100;
 
-  var txtRotate = function(el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10);
-    this.txt = '';
-    this.tick();
+  if (this.isDeleting) { time /= 3; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    time = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
     this.isDeleting = false;
-  };
-  
-  txtRotate.prototype.tick = function() {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-  
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-    var element = this;
-    var time = 150 - Math.random() * 100;
-  
-    if (this.isDeleting) { time /= 3; }
-  
-    if (!this.isDeleting && this.txt === fullTxt) {
-      time = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-      this.isDeleting = false;
-      this.loopNum++;
-      time = 400;
-    }
-    setTimeout(function() {
-      element.tick();
-    }, time);
-  };
+    this.loopNum++;
+    time = 400;
+  }
+  setTimeout(function() {
+    element.tick();
+  }, time);
+};
 
-  document.addEventListener("DOMContentLoaded", function()  {
-    var elements = document.getElementsByClassName('txt-rotate');
-    for (var i=0; i<elements.length; i++) {
-      var toRotate = elements[i].getAttribute('data-rotate');
-      var period = elements[i].getAttribute('data-period');
-      if (toRotate) {
-        new txtRotate(elements[i], JSON.parse(toRotate), period);
+document.addEventListener("DOMContentLoaded", function()  {
+  const elements = document.getElementsByClassName('txt-rotate');
+  for (let i=0; i<elements.length; i++) {
+    let toRotate = elements[i].getAttribute('data-rotate');
+    let period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new txtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+});
+
+function counter(id, start, end) {
+  let obj = document.getElementById(id),
+  timer = setInterval(() => {
+  start += 1;
+  obj.textContent = start;
+  if (start === end) {
+    clearInterval(timer);
+  }
+  }, Math.abs(Math.floor(100 / end - start)));
+}
+
+document.addEventListener("DOMContentLoaded", function()  {
+  counter("count1", 0, 20);
+  counter("count2-first", 0, 1);
+  counter("count2-second", 0, 700);
+  counter("count3-first", 0, 1, 10);
+  counter("count3-second", 0, 300);
+  counter("count4-first", 0, 1);
+  counter("count4-second", 0, 200);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  let pagenum = 1;
+  function AutoRotate() {
+    const allElements = document.getElementsByTagName('label');
+    for (let i = 0 ; i < allElements.length ; i++) {
+      let myfor = allElements[i].getAttribute('for');
+      if ((myfor !== null) && (myfor === ('slide_' + pagenum))) {
+        allElements[i].click();
+        break;
       }
     }
-   });
-
-  document.addEventListener("DOMContentLoaded", function()  {
-    function counter(id, start, end, duration) {
-     let obj = document.getElementById(id),
-      current = start,
-      range = end - start,
-      increment = end > start ? 1 : -1,
-      step = Math.abs(Math.floor(duration / range)),
-      timer = setInterval(() => {
-       current += increment;
-       obj.textContent = current;
-       if (current == end) {
-        clearInterval(timer);
-       }
-      }, step);
+    if (pagenum === 4) {
+      pagenum = 1;
+    } else {
+      pagenum++;
     }
-    counter("count1", 0, 20, 1000);
-    counter("count2-first", 0, 1, 10);
-    counter("count2-second", 0, 700, 100);
-    counter("count3-first", 0, 1, 10);
-    counter("count3-second", 0, 300, 100);
-    counter("count4-first", 0, 1, 20);
-    counter("count4-second", 0, 200, 100);
+  }
+  setInterval(AutoRotate, 5000);
+});
 
-   });
-
-   document.addEventListener('DOMContentLoaded', function() {
-    pagenum = 1;
-    function AutoRotate() {
-       var allElements = document.getElementsByTagName('label');
-       for (var i = 0 ; i < allElements.length ; i++) {
-           var myfor = allElements[i].getAttribute('for');
-           if ((myfor !== null) && (myfor == ('slide_' + pagenum))) {
-               allElements[i].click();
-               break;
-           }
-       }
-       if (pagenum == 4) {
-           pagenum = 1;
-       } else {
-           pagenum++;
-       }
-    }
-    setInterval(AutoRotate, 5000);
- });
-
-projectButtons = document.querySelectorAll("#project-flters li");
-for (var i = 0 ; i<projectButtons.length; i++){
+const projectButtons = document.querySelectorAll("#project-flters li");
+for (let i = 0 ; i<projectButtons.length; i++){
   projectButtons[i].addEventListener("click" , function(){
-    for (var j = 0 ; j < projectButtons.length ; j++){
+    for (let j = 0 ; j < projectButtons.length ; j++){
       projectButtons[j].classList.remove("filter-active");
     }
     this.classList.add("filter-active");
@@ -142,11 +140,11 @@ for (var i = 0 ; i<projectButtons.length; i++){
 }
 
 document.querySelector('#all').addEventListener("click", function(){
-  var projects = document.querySelectorAll(".project-box");
-  for (i = 0; i < projects.length; i++){
+  const projects = document.querySelectorAll(".project-box");
+  for (let i = 0; i < projects.length; i++){
     projects[i].style.display = "none";
-    var num  = projects[i].classList.length;
-    var last = projects[i].classList.item(num-1);
+    let num  = projects[i].classList.length;
+    let last = projects[i].classList.item(num-1);
     projects[i].classList.remove(last);
     if (i === 0){
       projects[i].classList.add("project-one-all");
@@ -167,9 +165,9 @@ document.querySelector('#all').addEventListener("click", function(){
       projects[i].classList.add("project-six-all");
     }
   }
-  document.querySelector("#project").children[0].children[1].children[1].className = "project-container-all";
+  document.querySelector("#project-container").className = "project-container-all";
 
-  for (i = 0; i < projects.length; i++){
+  for (let i = 0; i < projects.length; i++){
     if (projects[i].classList.contains("all")) {
       projects[i].style.display = "block";
     }
@@ -177,11 +175,11 @@ document.querySelector('#all').addEventListener("click", function(){
 })
 
 document.querySelector('#branding').addEventListener("click", function(){
-  var projects = document.querySelectorAll(".project-box");
-  for (i = 0; i < projects.length; i++){
+  const projects = document.querySelectorAll(".project-box");
+  for (let i = 0; i < projects.length; i++){
     projects[i].style.display = "none";
-    var num  = projects[i].classList.length;
-    var last = projects[i].classList.item(num-1);
+    let num  = projects[i].classList.length;
+    let last = projects[i].classList.item(num-1);
     projects[i].classList.remove(last);
     if (i === 0){
       projects[i].classList.add("project-one-brand");
@@ -202,9 +200,9 @@ document.querySelector('#branding').addEventListener("click", function(){
       projects[i].classList.add("project-six-brand");
     }
   }
-  document.querySelector("#project").children[0].children[1].children[1].className = "project-container-brand";
+  document.querySelector("#project-container").className = "project-container-brand";
 
-  for (i = 0; i < projects.length; i++){
+  for (let i = 0; i < projects.length; i++){
     if (projects[i].classList.contains("branding")) {
       projects[i].style.display = "block";
     }
@@ -212,11 +210,11 @@ document.querySelector('#branding').addEventListener("click", function(){
 })
 
 document.querySelector('#web').addEventListener("click", function(){
-  var projects = document.querySelectorAll(".project-box");
-  for (i = 0; i < projects.length; i++){
+  const projects = document.querySelectorAll(".project-box");
+  for (let i = 0; i < projects.length; i++){
     projects[i].style.display = "none";
-    var num  = projects[i].classList.length;
-    var last = projects[i].classList.item(num-1);
+    let num  = projects[i].classList.length;
+    let last = projects[i].classList.item(num-1);
     projects[i].classList.remove(last);
 
     if (i === 0){
@@ -239,9 +237,9 @@ document.querySelector('#web').addEventListener("click", function(){
     }
   }
   
-  document.querySelector("#project").children[0].children[1].children[1].className = "project-container-web";
+  document.querySelector("#project-container").className = "project-container-web";
 
-  for (i = 0; i < projects.length; i++){
+  for (let i = 0; i < projects.length; i++){
     if (projects[i].classList.contains("webdesign")) {
       projects[i].style.display = "block";
     }
@@ -249,11 +247,11 @@ document.querySelector('#web').addEventListener("click", function(){
 })
 
 document.querySelector('#photography').addEventListener("click", function(){
-  var projects = document.querySelectorAll(".project-box");
-  for (i = 0; i < projects.length; i++){
+  const projects = document.querySelectorAll(".project-box");
+  for (let i = 0; i < projects.length; i++){
     projects[i].style.display = "none";
-    var num  = projects[i].classList.length;
-    var last = projects[i].classList.item(num-1);
+    let num  = projects[i].classList.length;
+    let last = projects[i].classList.item(num-1);
     projects[i].classList.remove(last);
 
     if (i === 0){
@@ -276,222 +274,191 @@ document.querySelector('#photography').addEventListener("click", function(){
     }
   }
 
-  document.querySelector("#project").children[0].children[1].children[1].className = "project-container-photography";
-  for (i = 0; i < projects.length; i++){
+  document.querySelector("#project-container").className = "project-container-photography";
+  for (let i = 0; i < projects.length; i++){
     if (projects[i].classList.contains("photography")) {
       projects[i].style.display = "block";
     }
   }
 })
+
 function bgChange(){
-  overlay = document.querySelectorAll(".project-img-overlay")
-  for(var i = 0 ; i <overlay.length ; i++){
+  const overlay = document.querySelectorAll(".project-img-overlay")
+  for(let i = 0 ; i <overlay.length ; i++){
     overlay[i].style.display = "none";
   }
-  navbar = document.querySelector("nav");
+  const navbar = document.querySelector("nav");
   navbar.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
 
   document.body.style.overflow = "hidden";
   document.body.style.height = "100%";
 }
-var modal1 = document.getElementById("myModal1");
 
-var img1 = document.getElementById("myImg1");
-img1.onclick = function(){
+const modal1 = document.getElementById("myModal1");
+const modal2 = document.getElementById("myModal2");
+const modal3 = document.getElementById("myModal3");
+const modal4 = document.getElementById("myModal4");
+const modal5 = document.getElementById("myModal5");
+const modal6 = document.getElementById("myModal6");
+
+document.getElementById("myImg1").onclick = function(){
   modal1.style.display = "block";
   bgChange();
 }
 
-var next1 = document.getElementById("nextbtn1");
-next1.onclick = function(){
-    modal1.style.display = "none";
-    modal2.style.display = "block";
+document.getElementById("nextbtn1").onclick = function(){
+  modal1.style.display = "none";
+  modal2.style.display = "block";
 }
 
-var prev1 = document.getElementById("prevbtn1");
-prev1.onclick = function(){
-    modal1.style.display = "none";
-    modal6.style.display = "block";
+document.getElementById("prevbtn1").onclick = function(){
+  modal1.style.display = "none";
+  modal6.style.display = "block";
 }
 
-var modal2 = document.getElementById("myModal2");
-
-var img2 = document.getElementById("myImg2");
-img2.onclick = function(){
+document.getElementById("myImg2").onclick = function(){
   modal2.style.display = "block";
   bgChange();
 }
 
-var next2 = document.getElementById("nextbtn2");
-next2.onclick = function(){
-    modal2.style.display = "none";
-    modal3.style.display = "block";
+document.getElementById("nextbtn2").onclick = function(){
+  modal2.style.display = "none";
+  modal3.style.display = "block";
+}
+ 
+document.getElementById("prevbtn2").onclick = function(){
+  modal2.style.display = "none";
+  modal1.style.display = "block";
 }
 
-var prev2 = document.getElementById("prevbtn2");
-prev2.onclick = function(){
-    modal2.style.display = "none";
-    modal1.style.display = "block";
-}
-
-var modal3 = document.getElementById("myModal3");
-
-var img3 = document.getElementById("myImg3");
-img3.onclick = function(){
+document.getElementById("myImg3").onclick = function(){
   modal3.style.display = "block";
   bgChange();
 }
 
-var next3 = document.getElementById("nextbtn3");
-next3.onclick = function(){
-    modal3.style.display = "none";
-    modal4.style.display = "block";
+document.getElementById("nextbtn3").onclick = function(){
+  modal3.style.display = "none";
+  modal4.style.display = "block";
 }
 
-var prev3 = document.getElementById("prevbtn3");
-prev3.onclick = function(){
-    modal3.style.display = "none";
-    modal2.style.display = "block";
+document.getElementById("prevbtn3").onclick = function(){
+  modal3.style.display = "none";
+  modal2.style.display = "block";
 }
 
-var modal4 = document.getElementById("myModal4");
-
-var img4 = document.getElementById("myImg4");
-img4.onclick = function(){
+document.getElementById("myImg4").onclick = function(){
   modal4.style.display = "block";
   bgChange();
 }
-var next4 = document.getElementById("nextbtn4");
-next4.onclick = function(){
-    modal4.style.display = "none";
-    modal5.style.display = "block";
+
+document.getElementById("nextbtn4").onclick = function(){
+  modal4.style.display = "none";
+  modal5.style.display = "block";
 }
 
-var prev4 = document.getElementById("prevbtn4");
-prev4.onclick = function(){
-    modal4.style.display = "none";
-    modal3.style.display = "block";
+document.getElementById("prevbtn4").onclick = function(){
+  modal4.style.display = "none";
+  modal3.style.display = "block";
 }
 
-var modal5 = document.getElementById("myModal5");
-
-var img5 = document.getElementById("myImg5");
-img5.onclick = function(){
+document.getElementById("myImg5").onclick = function(){
   modal5.style.display = "block";
   bgChange();
 }
-var next5 = document.getElementById("nextbtn5");
-next5.onclick = function(){
-    modal5.style.display = "none";
-    modal6.style.display = "block";
+
+document.getElementById("nextbtn5").onclick = function(){
+  modal5.style.display = "none";
+  modal6.style.display = "block";
 }
 
-var prev5 = document.getElementById("prevbtn5");
-prev5.onclick = function(){
-    modal5.style.display = "none";
-    modal4.style.display = "block";
+document.getElementById("prevbtn5").onclick = function(){
+  modal5.style.display = "none";
+  modal4.style.display = "block";
 }
 
-var modal6 = document.getElementById("myModal6");
-
-var img6 = document.getElementById("myImg6");
-img6.onclick = function(){
+document.getElementById("myImg6").onclick = function(){
   modal6.style.display = "block";
   bgChange();
 }
-var next6 = document.getElementById("nextbtn6");
-next6.onclick = function(){
-    modal6.style.display = "none";
-    modal1.style.display = "block";
+
+document.getElementById("nextbtn6").onclick = function(){
+  modal6.style.display = "none";
+  modal1.style.display = "block";
 }
 
-var prev6 = document.getElementById("prevbtn6");
-prev6.onclick = function(){
-    modal6.style.display = "none";
-    modal5.style.display = "block";
+document.getElementById("prevbtn6").onclick = function(){
+  modal6.style.display = "none";
+  modal5.style.display = "block";
 }
 
-var span = document.getElementsByClassName("close");
-for( var i = 0 ; i<span.length ; i++){
-    span[i].onclick = function() { 
-        modal1.style.display = "none";
-        modal2.style.display = "none";
-        modal3.style.display = "none";
-        modal4.style.display = "none";
-        modal5.style.display = "none";
-        modal6.style.display = "none";
-        document.body.style.overflow = "auto";
-        document.body.style.height = "auto"; 
-        navbar = document.querySelector("nav");
-        navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
-        overlay = document.querySelectorAll(".project-img-overlay")
-        for(var i = 0 ; i <overlay.length ; i++){
-          overlay[i].style.display = "block";
-        }
-    }
+const closeSpan = document.getElementsByClassName("close");
+for( let i = 0 ; i<closeSpan.length ; i++){
+  closeSpan[i].onclick = function() { 
+      backToPrimaryBg();
+  }
 }
 
 window.onclick = function(event) {
   var outside = document.querySelectorAll("td");
-  for (var i = 0 ; i < outside.length; i++){
-    if (event.target == outside[i]) {
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-      modal3.style.display = "none";
-      modal4.style.display = "none";
-      modal5.style.display = "none";
-      modal6.style.display = "none";
-  
-      document.body.style.overflow = "auto";
-      document.body.style.height = "auto";  
-      navbar = document.querySelector("nav");
-      navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
-      overlay = document.querySelectorAll(".project-img-overlay")
-      for(var i = 0 ; i <overlay.length ; i++){
-        overlay[i].style.display = "block";
-      }
+  for (let i = 0 ; i < outside.length; i++){
+    if (event.target === outside[i]) {
+      backToPrimaryBg();
     }
   } 
+}
+function backToPrimaryBg(){
+  modal1.style.display = "none";
+  modal2.style.display = "none";
+  modal3.style.display = "none";
+  modal4.style.display = "none";
+  modal5.style.display = "none";
+  modal6.style.display = "none";
+  document.body.style.overflow = "auto";
+  document.body.style.height = "auto";  
+  const navbar = document.querySelector("nav");
+  navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+  const overlay = document.querySelectorAll(".project-img-overlay")
+  for(var i = 0 ; i <overlay.length ; i++){
+    overlay[i].style.display = "block";
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   const duration = 300;
-
   const scrollToTarget = function(target) {
-    const top = target.getBoundingClientRect().top;
-    const startPos = window.pageYOffset;
-    let startTime = null;
-    let requestId;
+  const top = target.getBoundingClientRect().top;
+  const startPos = window.pageYOffset;
+  let startTime = null;
+  let requestId;
 
-    const loop = function(currentTime) {
-        if (!startTime) {
-            startTime = currentTime;
-        }
-        const time = currentTime - startTime;
-        const percent = Math.min(time / duration, 1);
-        window.scrollTo(0, startPos + top * percent);
-        
-        if (time < duration) {
-            requestId = window.requestAnimationFrame(loop);
-        } else {
-            window.cancelAnimationFrame(requestId);
-        }
-    };
-    requestId = window.requestAnimationFrame(loop);
+  const loop = function(currentTime) {
+    if (!startTime) {
+      startTime = currentTime;
+    }
+    const time = currentTime - startTime;
+    const percent = Math.min(time / duration, 1);
+    window.scrollTo(0, startPos + top * percent);
+    
+    if (time < duration) {
+      var requestId = window.requestAnimationFrame(loop);
+    } else {
+      window.cancelAnimationFrame(requestId);
+    }
   };
+  requestId = window.requestAnimationFrame(loop);
+};
 
-  const clickHandler = function(e) {
-      e.preventDefault();
-      scrollToTarget(document.getElementById(e.target.getAttribute('href').substr(1)));
-  };
+const clickHandler = function(e) {
+    e.preventDefault();
+    scrollToTarget(document.getElementById(e.target.getAttribute('href').substr(1)));
+};
   const navLinks = document.querySelectorAll(".nav-link");
   for (var i = 0 ; i < navLinks.length ; i++){
     navLinks[i].addEventListener("click", clickHandler);
   } 
-  let homebtn1 = document.querySelector(".home-btn-1")
+  const homebtn1 = document.querySelector(".home-btn-1")
   homebtn1.addEventListener("click",clickHandler);
-  let homebtn2 = document.querySelector(".home-btn-2")
+  const homebtn2 = document.querySelector(".home-btn-2")
   homebtn2.addEventListener("click", clickHandler);
-
 });
 
