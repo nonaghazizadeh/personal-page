@@ -41,6 +41,7 @@ module.exports = {
           },
         ],
       },
+
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url-loader"
