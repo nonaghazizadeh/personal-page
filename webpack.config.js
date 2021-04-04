@@ -41,39 +41,18 @@ module.exports = {
           },
         ],
       },
-
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
-      },
-      {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
-      },
-      {
-        test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/i,
+        test: /\.(png|jpg|gif)$/i,
         use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 8192,
-            },
+            limit: 10000,
+            name: "img/[hash].[ext]"
+          },
           },
         ],
-        },
-
+      },
     ],
   }
 };
