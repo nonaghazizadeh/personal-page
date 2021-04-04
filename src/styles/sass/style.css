@@ -2,20 +2,19 @@
 ::after,
 ::before {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   background: #2b2c30;
   color: #fff;
+  font-family: "IRANSans";
   font-size: 14px;
   font-weight: normal;
   line-height: 24px;
   overflow-x: hidden;
   margin: 0 auto;
   padding: 0;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -95,7 +94,7 @@ p {
 .button:focus {
   outline: 0 none;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 ul {
@@ -126,7 +125,12 @@ ul {
 }
 
 .section-title h2:after {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #a5a5a5, rgba(0, 0, 0, 0));
+  background-image: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    #a5a5a5,
+    rgba(0, 0, 0, 0)
+  );
   position: absolute;
   left: 0;
   right: 0;
@@ -142,15 +146,15 @@ ul {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
 
 .title-row {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   max-width: 100%;
 }
 
@@ -176,13 +180,13 @@ ul {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: justify;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
@@ -201,18 +205,18 @@ ul {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: justify;
   -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .navbar.navbar-reduce {
   -webkit-box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
-          box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background-color: #fff;
@@ -272,13 +276,13 @@ ul {
 
 .navbar-collapse {
   -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .navbar-nav {
@@ -287,8 +291,8 @@ ul {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
@@ -342,7 +346,7 @@ ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -370,8 +374,8 @@ ul {
 
 .home-text {
   -webkit-box-align: center !important;
-      -ms-flex-align: center !important;
-          align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -427,8 +431,8 @@ ul {
   display: -ms-flexbox !important;
   display: flex !important;
   -webkit-box-align: center !important;
-      -ms-flex-align: center !important;
-          align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
 }
 
 .about-img-wrapper {
@@ -517,14 +521,14 @@ ul {
   min-width: 100%;
   border-top: 2px solid #d81356;
   -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }
 
 .single-services-box:hover:before {
   -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .services-icon {
@@ -657,10 +661,11 @@ ul {
   -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
   -webkit-box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.06);
-          box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.06);
 }
 
-.filter:hover, .filter.filter-active {
+.filter:hover,
+.filter.filter-active {
   color: #fff;
   background: #d81356;
   -webkit-transition: all 0.5s ease-in-out 0s;
@@ -715,7 +720,7 @@ ul {
   top: 50%;
   left: 0;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 100%;
   text-align: center;
   z-index: 2;
@@ -764,8 +769,8 @@ ul {
 
 .project-buttons {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   max-width: 100%;
 }
 
@@ -865,7 +870,7 @@ ul {
   width: 100%;
   overflow: hidden;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .testimonial_slider input {
@@ -888,8 +893,6 @@ ul {
   display: inline-block;
   background: #d6d6d6;
   border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
   cursor: pointer;
 }
 
@@ -1104,7 +1107,8 @@ ul {
   text-transform: capitalize;
 }
 
-.contact-area .form input, .contact-area .form textarea {
+.contact-area .form input,
+.contact-area .form textarea {
   width: 100%;
   padding: 10px 20px;
   color: #fff;
@@ -1141,8 +1145,8 @@ textarea:focus {
 
 .contact-info-item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   max-width: 100%;
   position: relative;
   width: 100%;
@@ -1154,8 +1158,8 @@ textarea:focus {
 .message-box,
 .button-box {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   max-width: 100%;
   position: relative;
   width: 100%;

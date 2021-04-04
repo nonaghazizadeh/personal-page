@@ -1,23 +1,21 @@
+@import "base";
 
-@import 'base';
+@import "navbar";
 
-@import 'navbar';
+@import "home";
 
-@import 'home';
+@import "about";
 
-@import 'about';
+@import "service";
 
-@import 'service';
+@import "counter";
 
-@import 'counter';
+@import "project";
 
-@import 'project';
+@import "review";
 
-@import 'review';
+@import "blog";
 
-@import 'blog';
+@import "contact";
 
-@import 'contact';
-
-@import 'footer';
-
+@import "footer";
