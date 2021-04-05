@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.s[ac]ss$/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -24,6 +24,10 @@ module.exports = {
           {
             loader: "css-loader",
             options: { importLoaders: 1 },
+          },
+          {
+            loader: 'resolve-url-loader',
+            options: {sourceMap: true},
           },
           {
             loader: "postcss-loader",
@@ -39,6 +43,10 @@ module.exports = {
               },
             },
           },
+          {
+            loader: 'sass-loader',
+            options: {sourceMap: true},
+          },
         ],
       },
       {
@@ -53,6 +61,17 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(ttf|woff|woff2|otf|eot)$/,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: 'fonts/[name].[ext]',
+                },
+            },
+        ],
+    },
     ],
   }
 };
